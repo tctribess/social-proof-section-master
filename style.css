@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+:root{
+--very-dark-magenta: hsl(300, 43%, 22%);
+--soft-pink: hsl(333, 80%, 67%);
+--dark-grayhish-magenta:hsl(303, 10%, 53%);
+--light-grayish-magenta:hsl(300, 24%, 96%);
+--white: hsl(0, 0%, 100%);
+--font-family: 'Spartan', sans-serif; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+body{
+    background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 330px right 860px, top 125px left 560px;
+}
+
+main{
+    font-family: var(--font-family);
+    font-size: 15px;
+    margin: 125px 160px 0;
+    display: grid;
+    grid-template-columns: 470px 680px;
+    grid-template-rows: 2;
+    row-gap: 75px;
+    grid-template-areas: 
+        "header sidebar"
+        "main main"
+       /* "footer footer"*/;
+    
+}
+
+#first-content{
+    grid-area: header;
+}
+
+h1 {
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    font-size: 42px;
+}
+
+#text-content{
+    color: var(--dark-grayhish-magenta);
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#rating-content{
+    grid-area: sidebar;
+    
+}
+.rating{
+    width: 440px;
+    height: 50px;
+    background-color: var(--light-grayish-magenta);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.icon-star{
+    margin-left: 35px;
+}   
+
+.icon-star > img {
+    margin-left: 5px;
+}
+
+span{
+    margin-left: 35px;
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+}
+
+#rating-one{
+    margin-left: 140px;
+}
+
+#rating-two{
+    margin-left: 180px;
+}
+
+#rating-three{
+    margin-left: 220px;
+}
+
+
+#comment-content{
+    grid-area: main;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 35px;
+}
+
+.comment{
+    width: 350px;
+    height: 235px;
+    background-color: var(--very-dark-magenta);
+    border-radius: 10px;
+}
+
+.header-user{
+    display: flex;
+    margin: 40px 30px 0 30px;
+}
+
+.image-user{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 25px;
+}
+
+.name-user{
+    color: var(--light-grayish-magenta);
+}
+
+.category-checked{
+    color: var(--soft-pink);   
+}
+
+.text-content {
+    color: var(--light-grayish-magenta);
+    margin: 20px 30px 40px 30px;
+    font-size: 13px;
+}
+
+#user-irene{
+    margin-top: 15px;
+}
+#user-anne{
+    margin-top: 30px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/*.attribution {
+    font-size: 11px;
+    text-align: center;
+    grid-area: footer;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }*/
+
+  @media (max-width: 400px) {
+
+    body {
+        max-width: 100%;
+        height: auto;
+        overflow-y: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main {
+          width: 375px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          font-size: 12px;
+          row-gap: 0;
+          margin-top: 30px;
+    }
+
+    #first-content{
+        width: 330px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+        text-align: center;
+        margin: 10px 30px;
+    }
+
+    #text-content{
+        text-align: center;
+        margin: 20px 25px;
+    }  
+    
+    #rating-content{
+        margin-top: 0;
+    }
+
+    .icon-star{
+        margin:0;
+    }
+
+    .rating{
+          flex-direction: column;
+          width: 330px;
+          height: 75px;
+          justify-content: space-evenly;
+          align-items: center;
+          border-radius: 5px;
+          margin-top: 10px;
+      }
+
+     #rating-one, #rating-two, #rating-three {
+          margin-left: 0;
+      }
+
+      span{
+          margin: 0;
+      }
+
+     #comment-content{
+          flex-direction: column;
+          margin: 30px 0;
+      }
+
+      .comment{
+        width: 330px;
+        height: 235px;
+        border-radius: 5px;
+    }
+
+      #user-anne, #user-irene{
+          margin-top: 10px;
+      }
+  }
